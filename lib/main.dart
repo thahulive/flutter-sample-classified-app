@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'home_page.dart';
+import 'package:classifieds_app/generate_otp.dart';
+import 'package:classifieds_app/verify_otp.dart';
+import 'package:classifieds_app/home_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   final routes = <String, WidgetBuilder> {
-    LoginPage.tag: (context) => LoginPage(),
+    GenerateOtp.tag: (context) => GenerateOtp(),
+    VerifyOtp.tag: (context) => VerifyOtp(),
     HomePage.tag: (context) => HomePage(),
   };
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Classifieds',
-      home: LoginPage(),
+      home: GenerateOtp(),
       routes: routes,
     );
   }
